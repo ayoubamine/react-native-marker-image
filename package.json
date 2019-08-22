@@ -1,0 +1,25 @@
+{
+  "name": "react-native-image-marker",
+  "version": "1.0.0",
+  "description": "Merge image and marker into one!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoubamine/react-native-image-marker.git"
+  },
+  "keywords": [
+    "image",
+    "merge",
+    "compose",
+    "marker"
+  ],
+  "author": "Ayoub AMINE <ayoubamine@parkini.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayoubamine/react-native-image-marker/issues"
+  },
+  "homepage": "https://github.com/ayoubamine/react-native-image-marker#readme"
+}
