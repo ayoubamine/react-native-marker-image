@@ -2,4 +2,35 @@
 
 > Merge image and marker into one!
 
+## HOW TO INSTALL ?
+
+```javascript
+npm i --save react-native-image-marker
+```
+
+## HOW TO USE ?
+
+```javascript
+import ImageMarker from "react-native-image-marker";
+
+function MyComponent() {
+	return (
+		<View>
+			<ImageMarker
+				image={require("./assets/garage.jpeg")}
+				markerImage={require("./assets/marker.png")}
+				markerSize={50}
+				onChange={data => console.log(data)}
+			/>
+		</View>
+	);
+}
+```
+
+## Result
+
 ![Simulator Screen Shot](simulator-screen-shot.png)
+
+## LICENSE
+
+MIT
