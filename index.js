@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Dimensions, View, Image, Text } from "react-native";
+import { StyleSheet, Dimensions, View, Image } from "react-native";
 
 const WIN_WIDTH = Dimensions.get("window").width;
 
@@ -20,10 +20,12 @@ export default class ImageMarker extends Component {
     };
   }
 
-  _onImageLoaded(e) {
-    console.log('HERE');
-    
-    const { width, height } = e.nativeEvent.source;
+  componentDidMount() {
+    this._onImageLoaded();
+  }
+
+  _onImageLoaded() {
+    const { width, height } = Image.resolveAssetSource(this.props.image);
     const containerHeight = height / (width / WIN_WIDTH);
 
     this.setState({
@@ -96,7 +98,6 @@ export default class ImageMarker extends Component {
         >
           <Image
             source={this.props.image}
-            onLoad={e => this._onImageLoaded(e)}
             style={styles.image}
             resizeMode="cover"
           />
@@ -113,8 +114,6 @@ export default class ImageMarker extends Component {
           }}
           resizeMode="contain"
         />
-
-        <Text style={{ fontSize: 50, margin: 50 }}>{this.state.height}</Text>
       </View>
     );
   }
