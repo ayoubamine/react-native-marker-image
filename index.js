@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions, View, Image } from "react-native";
 
 const WIN_WIDTH = Dimensions.get("window").width;
 
-export default class ImageMarker extends Component {
+export default class MarkerImage extends Component {
 	constructor(props) {
 		super(props);
 

@@ -1,17 +1,17 @@
-# react-native-image-marker
+# react-native-marker-image
 
 > Merge image and marker into one!
 
 ## HOW TO INSTALL ?
 
 ```javascript
-npm i --save react-native-image-marker
+npm i --save react-native-marker-image
 ```
 
 ## HOW TO USE ?
 
 ```javascript
-import ImageMarker from "react-native-image-marker";
+import ImageMarker from "react-native-marker-image";
 
 function MyComponent() {
 	return (

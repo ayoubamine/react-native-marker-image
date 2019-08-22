@@ -1,5 +1,5 @@
 {
-  "name": "react-native-image-marker",
+  "name": "react-native-marker-image",
   "version": "1.0.0",
   "description": "Merge image and marker into one!",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayoubamine/react-native-image-marker.git"
+    "url": "git+https://github.com/ayoubamine/react-native-marker-image.git"
   },
   "keywords": [
     "image",
@@ -19,7 +19,7 @@
   "author": "Ayoub AMINE <ayoubamine@parkini.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ayoubamine/react-native-image-marker/issues"
+    "url": "https://github.com/ayoubamine/react-native-marker-image/issues"
   },
-  "homepage": "https://github.com/ayoubamine/react-native-image-marker#readme"
+  "homepage": "https://github.com/ayoubamine/react-native-marker-image#readme"
 }
