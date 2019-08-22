@@ -89,19 +89,17 @@ export default class ImageMarker extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View
-          onStartShouldSetResponder={e => true}
-          onResponderGrant={e => this._handlePress(e)}
-          onResponderMove={e => this._handlePress(e)}
-          style={{ ...styles.imageContainer, height: this.state.height }}
-        >
-          <Image
-            source={this.props.image}
-            style={styles.image}
-            resizeMode="cover"
-          />
-        </View>
+      <View
+        onStartShouldSetResponder={e => true}
+        onResponderGrant={e => this._handlePress(e)}
+        onResponderMove={e => this._handlePress(e)}
+        style={{ ...styles.imageContainer, height: this.state.height }}
+      >
+        <Image
+          source={this.props.image}
+          style={styles.image}
+          resizeMode="cover"
+        />
 
         <Image
           source={this.props.markerImage}
@@ -120,10 +118,8 @@ export default class ImageMarker extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    position: "relative"
-  },
   imageContainer: {
+    position: "relative",
     width: "100%"
   },
   image: {
