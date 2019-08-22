@@ -1,6 +1,6 @@
 {
   "name": "react-native-marker-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Merge image and marker into one!",
   "main": "index.js",
   "scripts": {
