@@ -31,6 +31,48 @@ function MyComponent() {
 
 ![Simulator Screen Shot](simulator-screen-shot.png)
 
+## Reference
+
+## Props
+
+### `image`
+
+The image source (either a remote URL or a local file resource).
+
+| Type | Required |
+| ---- | -------- |
+| ImageSourcePropType | Yes       |
+
+---
+
+### `markerImage`
+
+The marker image source (either a remote URL or a local file resource).
+
+| Type | Required |
+| ---- | -------- |
+| ImageSourcePropType | Yes       |
+
+---
+
+### `markerSize`
+
+The marker image size.
+
+| Type | Required |
+| ---- | -------- |
+| number | Yes       |
+
+---
+
+### `onChange`
+
+Invoked when the marker position changed.
+
+| Type | Required |
+| ---- | -------- |
+| function | Yes       |
+
 ## LICENSE
 
 MIT
