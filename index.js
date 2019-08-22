@@ -59,16 +59,16 @@ export default class ImageMarker extends Component {
 
 	_locationY(y) {
 		if (y < 0) return 0;
-		if (y <= this.state.height) return y;
-		return this.state.height;
+		if (y >= this.state.height) return this.state.height;
+		return y;
 	}
 
 	_handlePress(e) {
 		this.setState(
 			{
 				markerPosition: {
-					x: e.nativeEvent.locationX,
-					y: this._locationY(e.nativeEvent.locationY)
+					x: e.nativeEvent.locationX.toFixed(2),
+					y: this._locationY(e.nativeEvent.locationY.toFixed(2))
 				}
 			},
 			() => {
@@ -91,8 +91,8 @@ export default class ImageMarker extends Component {
 		};
 
 		const originMarkerPosition = {
-			x: this.state.markerPosition.x * scale.x,
-			y: this.state.markerPosition.y * scale.y
+			x: (this.state.markerPosition.x * scale.x).toFixed(2),
+			y: (this.state.markerPosition.y * scale.y).toFixed(2)
 		};
 
 		const dimensions = {
@@ -111,12 +111,7 @@ export default class ImageMarker extends Component {
 
 	render() {
 		return (
-			<View
-				onStartShouldSetResponder={e => true}
-				onResponderGrant={e => this._handlePress(e)}
-				onResponderMove={e => this._handlePress(e)}
-				style={{ ...styles.imageContainer, height: this.state.height }}
-			>
+			<View style={{ ...styles.imageContainer, height: this.state.height }}>
 				<Image
 					source={this.props.image}
 					style={styles.image}
@@ -134,6 +129,13 @@ export default class ImageMarker extends Component {
 					}}
 					resizeMode="contain"
 				/>
+
+				<View
+					onStartShouldSetResponder={e => true}
+					onResponderGrant={e => this._handlePress(e)}
+					onResponderMove={e => this._handlePress(e)}
+					style={styles.safeZone}
+				/>
 			</View>
 		);
 	}
@@ -150,5 +152,13 @@ const styles = StyleSheet.create({
 	},
 	marker: {
 		position: "absolute"
+	},
+	safeZone: {
+		position: "absolute",
+		top: 0,
+		bottom: 0,
+		left: 0,
+		right: 0,
+		zIndex: 1
 	}
 });
