@@ -38,15 +38,18 @@ export default class ImageMarker extends Component {
     });
   }
 
+  _locationY(y) {
+    if (y < 0) return 0;
+    if (y <= this.state.height) return y;
+    return this.state.height;
+  }
+
   _handlePress(e) {
     this.setState(
       {
         markerPosition: {
-          x: e.nativeEvent.pageX,
-          y:
-            e.nativeEvent.pageY <= this.state.height
-              ? e.nativeEvent.pageY
-              : this.state.height
+          x: e.nativeEvent.locationX,
+          y: this._locationY(e.nativeEvent.locationY)
         }
       },
       () => {
