@@ -27,7 +27,7 @@ function MyComponent() {
 }
 ```
 
-## Result
+### Result
 
 ![Simulator Screen Shot](simulator-screen-shot.png)
 
