@@ -1,9 +1,30 @@
 import React, { Component } from "react";
 import { StyleSheet, Dimensions, View, Image } from "react-native";
+import PropTypes from 'prop-types';
 
 const WIN_WIDTH = Dimensions.get("window").width;
 
 export default class MarkerImage extends Component {
+	static propTypes = {
+		image: PropTypes.any.isRequired,
+		markerImage: PropTypes.number.isRequired,
+		markerSize: PropTypes.number.isRequired,
+		markerMove: PropTypes.bool,
+		markerPosition: PropTypes.shape({
+			x: PropTypes.number.isRequired,
+			y: PropTypes.number.isRequired,
+		}),
+		originMarkerPosition: PropTypes.shape({
+			x: PropTypes.number.isRequired,
+			y: PropTypes.number.isRequired,
+		}),
+		onChange: PropTypes.func
+	};
+
+	static defaultProps = {
+		markerMove: true
+	};
+
 	constructor(props) {
 		super(props);
 
@@ -90,9 +111,11 @@ export default class MarkerImage extends Component {
 				}
 			},
 			() => {
-				const dimensions = this._getDimensions();
+				if (this.props.onChange) {
+					const dimensions = this._getDimensions();
 
-				this.props.onChange(dimensions);
+					this.props.onChange(dimensions);
+				}
 			}
 		);
 	}
