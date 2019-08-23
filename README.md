@@ -3,7 +3,7 @@
 [![npm package](https://img.shields.io/npm/v/react-native-marker-image.svg)](https://www.npmjs.com/package/react-native-marker-image)
 ![Supports Android and iOS](https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg)
 ![MIT License](https://img.shields.io/npm/l/react-native-marker-image.svg)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 > Merge marker and marker into one for Android and IOS!
 
@@ -67,6 +67,36 @@ The marker image size.
 | Type | Required |
 | ---- | -------- |
 | number | Yes       |
+
+---
+
+### `markerMove`
+
+Add click and move responders to marker.
+
+| Type | Required |
+| ---- | -------- |
+| bool | No       |
+
+---
+
+### `markerPosition`
+
+This property represents the position according to the screen.
+
+| Type | Required |
+| ---- | -------- |
+| object: {x: number, y: number} | No       |
+
+---
+
+### `originMarkerPosition`
+
+Similarly to `markerPosition`, this property represents the position according to the original image size.
+
+| Type | Required |
+| ---- | -------- |
+| object: {x: number, y: number} | No       |
 
 ---
 
