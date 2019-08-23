@@ -106,7 +106,7 @@ Invoked when the marker position changed.
 
 | Type | Required |
 | ---- | -------- |
-| function | Yes       |
+| function | No       |
 
 ## LICENSE
 
