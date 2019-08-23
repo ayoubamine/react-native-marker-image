@@ -46,12 +46,30 @@ export default class MarkerImage extends Component {
 		this._getImageSize(this.props.image).then(({ width, height }) => {
 			const containerHeight = height / (width / WIN_WIDTH);
 
-			this.setState({
-				image: { width, height },
-				markerPosition: {
+			let markerPosition = null;
+
+			if (this.props.markerPosition) {
+				markerPosition = this.props.markerPosition;
+			} else if (this.props.originMarkerPosition) {
+				const scale = {
+					x: width / WIN_WIDTH,
+					y: height / containerHeight
+				};
+
+				markerPosition = {
+					x: this.props.originMarkerPosition.x / scale.x,
+					y: this.props.originMarkerPosition.y / scale.y
+				};
+			} else {
+				markerPosition = {
 					x: WIN_WIDTH / 2,
 					y: containerHeight / 2
-				},
+				};
+			}
+
+			this.setState({
+				image: { width, height },
+				markerPosition,
 				height: containerHeight
 			});
 		});
@@ -130,12 +148,15 @@ export default class MarkerImage extends Component {
 					resizeMode="contain"
 				/>
 
-				<View
-					onStartShouldSetResponder={e => true}
-					onResponderGrant={e => this._handlePress(e)}
-					onResponderMove={e => this._handlePress(e)}
-					style={styles.safeZone}
-				/>
+				{
+					this.props.markerMove ?
+						<View
+							onStartShouldSetResponder={e => true}
+							onResponderGrant={e => this._handlePress(e)}
+							onResponderMove={e => this._handlePress(e)}
+							style={styles.safeZone}
+						/> : null
+				}
 			</View>
 		);
 	}
